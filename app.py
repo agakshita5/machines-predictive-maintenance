@@ -5,10 +5,8 @@ import joblib
 import warnings
 warnings.filterwarnings('ignore')
 
-model_path = st.secrets["model"]["path"]
-scaler_path = st.secrets["model"]["scaler_path"]
-model = joblib.load(model_path)
-scaler = joblib.load(scaler_path)
+model = joblib.load('xgb_model_static.pkl')
+scaler = joblib.load('scaler_static.pkl')
 
 st.title('🛠 Predictive Maintenance Predictor')
 st.markdown("Enter values to get prediction, probability and action recommendation.")
